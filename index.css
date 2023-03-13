@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    background:
+        linear-gradient(180deg, #FFFFFF 0%, #F6F7FB 100%);
+}
+
+/* padding */
+
+header { padding: 2.5% 5%; }
+
+main { padding-inline: 2.5%; }
+
+section { padding-block: 5%; }
+
+.info {
+    padding: 3% 4%;
+}
+
+/* header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-profile,
+.icon-chat { width: 8%; }
+
+.logo { width: 16%; }
+
+/* main */
+
+.card { position: relative; }
+
+.avatar {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+}
+
+.name-age {
+    color: #F8F8F8;
+    font-size: 2rem;
+}
+
+.bio {
+    color: #B7B7B7;
+    font-size: 1.5rem;
+}
+
+.badge {
+    width: 45%;
+    position: absolute;
+    transform: rotate(-30deg);
+    top: 8%;
+    left: 4%;
+}
+
+/* buttons */
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.reject-btn,
+.accept-btn {
+    width: 16%;
+    aspect-ratio: 1/1;
+    box-shadow: 0px 0px 10px #b7b7b7;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.reject-btn:hover,
+.rejected { background-color: #FFE7EF; }
+
+.accept-btn:hover,
+.liked { background-color: #DBFFF4; }
+
+button:active { transform: scale(0.95); }
+
+.icon-btn { width: 46%; }
+
+/* media query */
+
+@media (min-width:551px) {
+    .container {
+        width: 550px;
+        margin: 0 auto;
+    }
+}
