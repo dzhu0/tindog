@@ -43,7 +43,7 @@ header {
 
 /* main */
 
-.card { position: relative; }
+.profile { position: relative; }
 
 .avatar {
     width: 100%;
@@ -99,7 +99,7 @@ header {
 .rejected { background-color: #FFE7EF; }
 
 .accept-btn:hover,
-.liked { background-color: #DBFFF4; }
+.accepted { background-color: #DBFFF4; }
 
 button:active { transform: scale(0.95); }
 
@@ -112,4 +112,10 @@ button:active { transform: scale(0.95); }
         width: 550px;
         margin: 0 auto;
     }
+}
+
+/* ultility */
+
+.disabled {
+    pointer-events: none;
 }
