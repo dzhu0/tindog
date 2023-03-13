@@ -92,6 +92,7 @@ header {
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .reject-btn:hover,
