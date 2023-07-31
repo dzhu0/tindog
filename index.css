@@ -6,26 +6,23 @@
     margin: 0;
 }
 
+html,
 body {
+    min-width: 280px;
     background-color: #E5E5E5;
     font-family: "Poppins", sans-serif;
 }
 
 .container {
-    background:
-        linear-gradient(180deg, #FFFFFF 0%, #F6F7FB 100%);
+    max-width: 550px;
+    height: 100vh;
+    background: linear-gradient(#FFFFFF, #F6F7FB);
+    padding: 15px;
+    margin-inline: auto;
 }
 
-/* padding */
-
-header { padding: 2.5% 5%; }
-
-main { padding-inline: 2.5%; }
-
-section { padding-block: 5%; }
-
-.info {
-    padding: 3% 4%;
+img {
+    display: block;
 }
 
 /* header */
@@ -36,25 +33,30 @@ header {
     align-items: center;
 }
 
-.icon-profile,
-.icon-chat { width: 8%; }
+.icon {
+    width: 45px;
+}
 
-.logo { width: 16%; }
+.logo {
+    width: 90px;
+}
 
 /* main */
 
-.profile { position: relative; }
+main {
+    position: relative;
+    margin-block: 15px;
+}
 
 .avatar {
     width: 100%;
-    object-fit: cover;
-    display: block;
     border-radius: 15px;
 }
 
 .info {
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
+    left: 15px;
 }
 
 .name-age {
@@ -75,47 +77,48 @@ header {
     left: 4%;
 }
 
-/* buttons */
+/* actions */
 
 .actions {
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 25px;
 }
 
-.reject-btn,
-.accept-btn {
-    width: 16%;
-    aspect-ratio: 1/1;
-    box-shadow: 0px 0px 10px #b7b7b7;
+.btn {
+    width: 80px;
+    height: 80px;
     background-color: #FFFFFF;
-    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 10px #b7b7b7;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
 }
 
-.reject-btn:hover,
-.rejected { background-color: #FFE7EF; }
-
-.accept-btn:hover,
-.accepted { background-color: #DBFFF4; }
-
-button:active { transform: scale(0.95); }
-
-.icon-btn { width: 46%; }
-
-/* media query */
-
-@media (min-width:551px) {
-    .container {
-        width: 550px;
-        margin: 0 auto;
-    }
+.btn.reject {
+    background-image: url(images/icon-cross.png);
 }
 
-/* ultility */
+.btn.accept {
+    background-image: url(images/icon-heart.png);
+}
 
-.disabled {
+.btn.reject:hover,
+.btn.rejected {
+    background-color: #FFE7EF;
+}
+
+.btn.accept:hover,
+.btn.accepted {
+    background-color: #DBFFF4;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:disabled {
     pointer-events: none;
 }

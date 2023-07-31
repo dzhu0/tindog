@@ -3,53 +3,37 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TinDog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo.png">
     <!-- Styles -->
     <link rel="stylesheet" href="index.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <img
-                class="icon-profile"
-                src="./images/icon-profile.png"
-                alt="Profile icon">
-            <img
-                class="logo"
-                src="./images/logo.png"
-                alt="Paw logo">
-            <img
-                class="icon-chat"
-                src="./images/icon-chat.png"
-                alt="Chat icon">
+            <a href="#">
+                <img class="icon" src="./images/icon-profile.png" alt="Profile icon">
+            </a>
+            <a href="#">
+                <img class="logo" src="./images/logo.png" alt="Paw logo">
+            </a>
+            <a href="#">
+                <img class="icon" src="./images/icon-chat.png" alt="Chat icon">
+            </a>
         </header>
 
-        <main>
-            <div class="profile" id="profile"></div>
-        </main>
+        <main id="profile"></main>
 
-        <section>
-            <div class="actions">
-                <button class="reject-btn" id="reject-btn">
-                    <img
-                        class="icon-btn"
-                        src="./images/icon-cross.png"
-                        alt="Red cross icon">
-                </button>
-                <button class="accept-btn" id="accept-btn">
-                    <img
-                        class="icon-btn"
-                        src="./images/icon-heart.png"
-                        alt="Green heart icon">
-                </button>
-            </div>
-        </section>
+        <div class="actions">
+            <button class="btn reject" id="reject-btn"></button>
+            <button class="btn accept" id="accept-btn"></button>
+        </div>
     </div>
 
     <script src="./index.js" type="module"></script>
