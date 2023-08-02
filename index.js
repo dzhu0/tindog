@@ -1,7 +1,7 @@
-import dogData from './data.js'
+import data from './data.js'
 import Dog from './Dog.js'
 
-const data = JSON.parse(localStorage.getItem('dogData')) || dogData
+const dogs = JSON.parse(localStorage.getItem('tindog-dogs')) || data
 
 const profile = document.getElementById('profile')
 const rejectBtn = document.getElementById('reject-btn')
@@ -18,13 +18,14 @@ render()
 function render() {
     profile.innerHTML = dog.getProfileHtml()
 
+    rejectBtn.classList.remove('rejected')
+    acceptBtn.classList.remove('accepted')
+
     if (dog.hasBeenLiked) {
-        rejectBtn.classList.remove('rejected')
         acceptBtn.classList.add('accepted')
         profile.innerHTML += getBadgeHtml()
     } else if (dog.hasBeenSwiped) {
         rejectBtn.classList.add('rejected')
-        acceptBtn.classList.remove('accepted')
         profile.innerHTML += getBadgeHtml()
     }
 }
@@ -41,19 +42,19 @@ function accept() {
 
 function handleBtnClick() {
     render()
-    
-    rejectBtn.classList.add('disabled')
-    acceptBtn.classList.add('disabled')
+
+    rejectBtn.disabled = true
+    acceptBtn.disabled = true
 
     setTimeout(() => {
-        rejectBtn.classList.remove('disabled')
-        acceptBtn.classList.remove('disabled')
+        rejectBtn.disabled = false
+        acceptBtn.disabled = false
         dog = getNewDog()
         render()
     }, 1000);
 
-    data[index++] = dog.getObject()
-    localStorage.setItem('dogData', JSON.stringify(data))
+    dogs[index++] = dog.getObject()
+    localStorage.setItem('tindog-dogs', JSON.stringify(dogs))
 }
 
 function getBadgeHtml() {
@@ -62,16 +63,16 @@ function getBadgeHtml() {
         "./images/badge-nope.png"
 
     return `
-        <img
-            class="badge"
-            src="${badge}"
-            alt="A badge of accept or reject">`
+<img
+    class="badge"
+    src="${badge}"
+    alt="A badge of accept or reject">`
 }
 
 function getNewDog() {
-    if (index === data.length) {
+    if (index === dogs.length) {
         index = 0
     }
 
-    return new Dog(data[index])
+    return new Dog(dogs[index])
 }

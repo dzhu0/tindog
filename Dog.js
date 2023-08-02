@@ -1,20 +1,20 @@
-class Dog {
+export default class Dog {
     constructor(data) {
         Object.assign(this, data)
     }
 
     getProfileHtml() {
-        const {name, avatar, age, bio} = this
+        const { name, avatar, age, bio } = this
 
         return `
-            <img
-                class="avatar"
-                src="${avatar}"
-                alt="User's avatar picture">
-            <div class="info">
-                <h1 class="name-age">${name}, ${age}</h1>
-                <p class="bio">${bio}</p>
-            </div>`
+<img
+    class="avatar"
+    src="${avatar}"
+    alt="User's avatar picture">
+<div class="info">
+    <h1 class="name-age">${name}, ${age}</h1>
+    <p class="bio">${bio}</p>
+</div>`
     }
 
     reject() {
@@ -31,5 +31,3 @@ class Dog {
         return this
     }
 }
-
-export default Dog
